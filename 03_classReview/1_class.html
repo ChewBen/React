@@ -9,12 +9,41 @@
 </head>
 <body>
 <!--容器-->
-<div id="test"></div>
+<div id="test1"></div>
+<div id="test2"></div>
+<div id="test3"></div>
 <!--引入核心库-->
 <script type="text/javascript" src="/js/react.development.js"></script>
 <script type="text/javascript" src="/js/react-dom.development.js"></script>
 <script type="text/javascript" src="/js/babel.min.js"></script>
+<script type="text/javascript" src="/js/prop-types.js"></script>
 <script type="text/babel" >
+class Person extends React.Component{
+    constructor(props) {
+        console.log(props)
+        super(props);
+    }
+render() {
+    const {name,age,sex}=this.props
+    return(
+        <ul>
+            <li>name:{name}</li>
+            <li>age:{age+1}</li>
+            <li>sex:{sex}</li>
+        </ul>
+    )
+}
+    static propTypes = {
+        name: PropTypes.string.isRequired,
+        sex:PropTypes.string
+    }
+    static defaultProps = {
+        sex:'male',
+        age: 18
+    }
+}
+
+ReactDOM.render(< Person name='a' age={18} sex='female'  />, document.getElementById('test1'))
 
 </script>
 </body>
