@@ -2122,7 +2122,7 @@ function escape(key) {
 }
 
 /**
- * TODO: Test that a single child and an array with one item have the same key
+ * TODO: Test that a single child and an array with one Item have the same key
  * pattern.
  */
 

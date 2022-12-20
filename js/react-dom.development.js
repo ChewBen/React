@@ -642,9 +642,9 @@ function accumulateInto(current, next) {
 
 /**
  * @param {array} arr an "accumulation" of items which is either an Array or
- * a single item. Useful when paired with the `accumulate` module. This is a
+ * a single Item. Useful when paired with the `accumulate` module. This is a
  * simple utility that allows us to reason about a collection of items, but
- * handling the case when there is exactly one item (and we do not need to
+ * handling the case when there is exactly one Item (and we do not need to
  * allocate an array).
  * @param {function} cb Callback invoked with each element or a collection.
  * @param {?} [scope] Scope used as `this` in a callback.
@@ -7736,7 +7736,7 @@ function createElement(type, props, rootContainerElement, parentNamespace) {
       // Normally attributes are assigned in `setInitialDOMProperties`, however the `multiple`
       // attribute on `select`s needs to be added before `option`s are inserted. This prevents
       // a bug where the `select` does not scroll to the correct option because singular
-      // `select` elements automatically pick the first item.
+      // `select` elements automatically pick the first Item.
       // See https://github.com/facebook/react/issues/13222
       if (type === 'select' && props.multiple) {
         var node = domElement;
@@ -12016,7 +12016,7 @@ function ChildReconciler(shouldTrackSideEffects) {
         newFiber.effectTag = Placement;
         return lastPlacedIndex;
       } else {
-        // This item can stay in place.
+        // This Item can stay in place.
         return oldIndex;
       }
     } else {
@@ -12590,7 +12590,7 @@ function ChildReconciler(shouldTrackSideEffects) {
     var child = currentFirstChild;
     while (child !== null) {
       // TODO: If key === null and child.key === null, then this only applies to
-      // the first item in the list.
+      // the first Item in the list.
       if (child.key === key) {
         if (child.tag === Fragment ? element.type === REACT_FRAGMENT_TYPE : child.elementType === element.type) {
           deleteRemainingChildren(returnFiber, child.sibling);
@@ -12629,7 +12629,7 @@ function ChildReconciler(shouldTrackSideEffects) {
     var child = currentFirstChild;
     while (child !== null) {
       // TODO: If key === null and child.key === null, then this only applies to
-      // the first item in the list.
+      // the first Item in the list.
       if (child.key === key) {
         if (child.tag === HostPortal && child.stateNode.containerInfo === portal.containerInfo && child.stateNode.implementation === portal.implementation) {
           deleteRemainingChildren(returnFiber, child.sibling);
@@ -12656,7 +12656,7 @@ function ChildReconciler(shouldTrackSideEffects) {
   // children and the parent.
   function reconcileChildFibers(returnFiber, currentFirstChild, newChild, expirationTime) {
     // This function is not recursive.
-    // If the top level item is an array, we treat it as a set of children,
+    // If the top level Item is an array, we treat it as a set of children,
     // not as a fragment. Nested arrays on the other hand will be treated as
     // fragment nodes. Recursion happens at the normal flow.
 
@@ -16063,7 +16063,7 @@ function readContext(context, observedBits) {
         expirationTime: NoWork
       };
     } else {
-      // Append a new context item.
+      // Append a new context Item.
       lastContextDependency = lastContextDependency.next = contextItem;
     }
   }
